@@ -1,49 +1,19 @@
- /*
- * Copyright (C) 2010-2018 Arm Limited or its affiliates. All rights reserved.
- * Modifications Copyright (C) 2019 University of Bologna
- *
- * SPDX-License-Identifier: Apache-2.0
- *
- * Licensed under the Apache License, Version 2.0 (the License); you may
- * not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an AS IS BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-/* ----------------------------------------------------------------------
- * Project:      CMSIS NN Library - Mixed Precision INT-Q
- * Title:        ${config.filename}
+ ${config.header_top}
  * Description:  Converts the elements of ${config.in_data_t} vector to
  *               a reordered ${config.out_data_t} vector (without left-shift).
- *
- * Target Processor:  Cortex-M cores
- * 
- * Modification: Mixed-Precision INT-Q extension
- *
- * $Date:        3 September 2019
- * $Revision:    V.1.2.0
- *
- * $Authors:     Alessandro Capotondi - alessandro.capotondi@unibo.it
- *               Marco Fariselli - marco.fariselli2@unibo.it 
- *               Manuele Rusci - manuele.rusci@unibo.it
- *               
- * -------------------------------------------------------------------- */
+ ${config.header_bottom}
+ 
+#include "arm_math.h"
+#include "arm_cmixnn.h"
 
-#include "arm_nnsupportfunctions.h"
+#include "arm_cmixnn_support.h"
 
 /**
  * @ingroup groupSupport
  */
 
 /**
- * @addtogroup nndata_convert
+ * @addtogroup CMixNN_convert
  * @{
  */
 
@@ -173,7 +143,6 @@ ${config.fn_name}(
             *__SIMD32(pDst)++ = in8;
 % endif
 #endif
-
 			/* Decrement the loop counter */
 			blkCnt--;
 		}
@@ -282,7 +251,6 @@ ${config.fn_name}(
         /* Decrement the loop counter */
         blkCnt--;
     }
-
 }
 
 /**

@@ -1,6 +1,4 @@
-/*
- * Copyright (C) 2010-2018 Arm Limited or its affiliates. All rights reserved.
- * Modifications Copyright (C) 2018 University of Bologna
+/* Copyright (C) 2020 University of Bologna
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -17,18 +15,6 @@
  * limitations under the License.
  */
 
-/*
+ /******************************************************************
  * Project:      CMixNN Inference Library
  * Title:        ${config.filename}
- * Description:  ${config.description}
- *
- * Target Processor:
- *               Cortex-M cores
- *
- * $Date:        10 February 2020
- * $Revision:    Release v1.0.0
- *
- * $Authors:     Alessandro Capotondi <alessandro.capotondi AT unibo.it>
- *               Marco Fariselli      <marco.fariselli AT greenwaves-technologies.com>
- *               Manuele Rusci        <manuele.rusci AT unibo.it>
- */

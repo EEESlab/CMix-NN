@@ -38,15 +38,11 @@ class CMixNNFactory(object):
         self.quantization = ''
         self.folding = ''
         self.api = ''
-        self.header = ''
+        self.header_top = ''
+        self.header_bottom = ''
 
     def generate_api(self):
         return Template(filename="templates/arm_cmixnn_api.h").render(config=self)
-
-    def generate_header(self):
-        return Template(filename="templates/arm_cmixnn_header.h").render(config=self)
-        
-
 
 class CMixNNConvolve(CMixNNFactory):
     def __init__(self, in_data_t, out_data_t, wt_data_t, quantization, folding):
@@ -68,11 +64,9 @@ class CMixNNConvolve(CMixNNFactory):
         self.api = self.__class__.__name__
 
     def generate_code(self):
-        self.header = self.generate_header()
+        self.header_top = Template(filename="templates/arm_cmixnn_header_top.h").render(config=self)
+        self.header_bottom = Template(filename="templates/arm_cmixnn_header_bottom.h").render(config=self)
         return Template(filename="templates/arm_convolve_HWC_x_y_z.c").render(config=self)
-
-    def get_leftover_code(self):
-        return ""
 
 
 class CMixNNDepthwise(CMixNNFactory):
@@ -86,7 +80,8 @@ class CMixNNDepthwise(CMixNNFactory):
         self.api = self.__class__.__name__
 
     def generate_code(self):
-        self.header = self.generate_header()
+        self.header_top = Template(filename="templates/arm_cmixnn_header_top.h").render(config=self)
+        self.header_bottom = Template(filename="templates/arm_cmixnn_header_bottom.h").render(config=self)
         return Template(filename="templates/arm_depthwise_separable_conv_HWC_x_y_z.c").render(config=self)
 
 
@@ -104,7 +99,8 @@ class CMixNNMatMul(CMixNNFactory):
         self.api = self.__class__.__name__
 
     def generate_code(self):
-        self.header = self.generate_header()
+        self.header_top = Template(filename="templates/arm_cmixnn_header_top.h").render(config=self)
+        self.header_bottom = Template(filename="templates/arm_cmixnn_header_bottom.h").render(config=self)
         return Template(filename="templates/arm_nn_mat_mult_kernel_reordered_x_y_z.c").render(config=self)
 
 
@@ -117,7 +113,8 @@ class CMixNNConvertReorder(CMixNNFactory):
         self.api = self.__class__.__name__
 
     def generate_code(self):
-        self.header = self.generate_header()
+        self.header_top = Template(filename="templates/arm_cmixnn_header_top.h").render(config=self)
+        self.header_bottom = Template(filename="templates/arm_cmixnn_header_bottom.h").render(config=self)
         return Template(filename="templates/arm_x_to_y_reordered.c").render(config=self)
 
 

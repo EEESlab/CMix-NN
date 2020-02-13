@@ -1,37 +1,21 @@
-${config.license}
-${config.header}
-
-/* ----------------------------------------------------------------------
- * Project:      CMSIS NN Library - Mixed Precision INT-Q
- * Title:        ${config.filename}
+${config.header_top}
  * Description:  Mixed Precision Convolutional function that uses ${config.in_data_t}
  *               activations, ${config.wt_data_t} weights and produce ${config.out_data_t}
  *               output activations. Outputs are quantized using ${config.folding}
  *               folding technique.
- *
- * Target Processor:  Cortex-M cores
- * 
- * Modification: Mixed-Precision INT-Q extension
- *
- * $Date:        3 September 2019
- * $Revision:    V.1.2.0
- *
- * $Authors:     Alessandro Capotondi - alessandro.capotondi@unibo.it
- *               Marco Fariselli - marco.fariselli2@unibo.it 
- *               Manuele Rusci - manuele.rusci@unibo.it
- *               
- * -------------------------------------------------------------------- */
+${config.header_bottom}
+
 #include <assert.h>
 
 #include "arm_math.h"
-#include "arm_nnfunctions.h"
+#include "arm_cmixnn.h"
 
 /**
- *  @ingroup groupNN
+ *  @ingroup CMIXNN
  */
 
 /**
- * @addtogroup NNConv
+ * @addtogroup CMIXConv
  * @{
  */
 
@@ -610,5 +594,5 @@ ${config.fn_name}(const uint8_t *Im_in,
 }
 
 /**
- * @} end of NNConv group
+ * @} end of CMIXConv group
  */
