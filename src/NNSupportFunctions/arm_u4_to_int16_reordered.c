@@ -34,10 +34,7 @@
  *
  ******************************************************************/
  
-#include "arm_math.h"
 #include "arm_cmixnn.h"
-
-#include "arm_cmixnn_support.h"
 
 /**
  * @ingroup groupSupport

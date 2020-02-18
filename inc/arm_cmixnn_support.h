@@ -37,8 +37,6 @@
 #ifndef _ARM_MIXNN_SUPPORT_H_
 #define _ARM_MIXNN_SUPPORT_H_
 
-#include "arm_math.h"
-
 #ifdef __cplusplus
 extern "C"
 {

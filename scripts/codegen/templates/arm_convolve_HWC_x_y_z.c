@@ -7,7 +7,6 @@ ${config.header_bottom}
 
 #include <assert.h>
 
-#include "arm_math.h"
 #include "arm_cmixnn.h"
 
 /**

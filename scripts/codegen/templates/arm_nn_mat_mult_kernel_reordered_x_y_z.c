@@ -5,7 +5,6 @@ ${config.header_top}
  *               config.folding technique.
  ${config.header_bottom}
  
-#include "arm_math.h"
 #include "arm_cmixnn.h"
 
   /**

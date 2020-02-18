@@ -3,10 +3,7 @@
  *               a reordered ${config.out_data_t} vector (without left-shift).
  ${config.header_bottom}
  
-#include "arm_math.h"
 #include "arm_cmixnn.h"
-
-#include "arm_cmixnn_support.h"
 
 /**
  * @ingroup groupSupport
