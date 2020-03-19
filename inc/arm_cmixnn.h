@@ -51,6 +51,7 @@
 #ifndef _ARM_CMIXNN_H
 #define _ARM_CMIXNN_H
 
+#include "stm32h743xx.h"
 #include "arm_math.h"
 #include "arm_cmixnn_support.h"
 

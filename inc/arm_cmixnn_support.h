@@ -42,6 +42,8 @@ extern "C"
 {
 #endif
 
+#include "arm_math.h"
+
   /**
    * @brief Union for SIMD access of Q31/Q15/Q7 types
    */
